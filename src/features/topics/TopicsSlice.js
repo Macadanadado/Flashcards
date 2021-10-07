@@ -6,7 +6,7 @@ export const topicsSlice = createSlice({
         topics: {}
     },
     reducers: {
-        addTopic: (state, action) => {
+        addTopic: (state, action) => { //passed object {id, name, icon}
             const { id, name, icon } = action.payload;
             state.topics[id] = {
                 id: id,
@@ -15,7 +15,8 @@ export const topicsSlice = createSlice({
                 quizIds: []
             }
         },
-        addQuizId: (state, action) => {
+        //adds the quizId to the topics quizIds array
+        addQuizId: (state, action) => { //passed object {quizId: '123', topicId: '456'} 
             const { quizId, topicId } = action.payload;
             state.topics[topicId].quizIds.push(quizId)
         }

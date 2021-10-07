@@ -12,7 +12,7 @@ export default function NewQuizForm() {
   const [topicId, setTopicId] = useState("");
   const history = useHistory();
   const topics = useSelector(selectTopics);
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
